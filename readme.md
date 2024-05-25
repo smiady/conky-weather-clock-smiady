@@ -1,6 +1,6 @@
 # Conky Weather Clock Smiady
 A simple conky that displays the current weather, forecast for the next 4 days, clock and basic system parameters.
-<div style="text-align:center"><img src="screenshots/conky.jpg"></div>
+<div align="center"><img src="screenshots/conky.jpg"></div>
 
 ## Requirements
 
