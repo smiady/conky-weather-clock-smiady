@@ -1,0 +1,9 @@
+#!/bin/bash
+
+sleep 5
+
+killall conky
+
+cd ~/.conky/conky-weather-clock-smiady 
+
+conky -d -c config

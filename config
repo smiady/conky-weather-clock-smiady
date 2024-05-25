@@ -1,0 +1,58 @@
+conky.config = {
+	use_xft = true,
+	xftalpha = 0.1,
+	font = 'Ubuntu:pixelsize=12',
+	update_interval = 1,
+	total_run_times = 0,
+	lua_load = 'scripts.lua',
+
+	double_buffer = true,
+	draw_shades = false,
+	draw_outline = false,
+	draw_borders = false,
+	draw_graph_borders = false,
+	
+	no_buffers = true,
+	uppercase = false,
+	override_utf8_locale = true,
+	
+	alignment = 'middle_right',
+	gap_x = 10,
+	gap_y = 31,
+	
+	own_window = true,
+	own_window_type = 'desktop',
+	own_window_transparent = false,
+	own_window_hints = 'undecorated,below,sticky,skip_taskbar,skip_pager',
+	
+	own_window_colour = '282828',
+	own_window_argb_visual = true,
+	own_window_argb_value = 230,
+	
+	color1 = '33ff00',
+	color2 = '9a9d9f'
+}
+
+conky.text = [[
+${execpi 600 ./weather_current.sh}
+${execpi 600 ./weather_forecast.sh}
+${voffset 10}${color EAEAEA}${font Bariol Clock:pixelsize=80}${time %H:%M}$font${voffset -49}${offset 10}${color1}${font Bariol Clock:pixelsize=28}${time %d} ${voffset -7}${offset -4}${color EAEAEA}${font Bariol Clock:pixelsize=18}${time  %B} ${time %Y}$font${voffset 15}${font Bariol Clock:pixelsize=38}${goto 215}${time %A}$font
+${goto 8}${voffset 10}$font${color1}Uptime ${offset 3}$color$uptime ${goto 217}${color1}Down ${offset 3}$color${totaldown}${goto 310}${color1}Up ${offset 3}$color${totalup}
+
+${goto 8}${color1}CPU ${goto 40}$color$cpu% ${goto 75}${color2}temp ${exec ./sensor.sh} ${goto 200}$color${cpubar 5}
+${goto 8}${color1}RAM ${goto 40}$color$memperc% ${goto 75}${color2}$mem / $memmax ${goto 200}$color${membar 5}
+${goto 8}${color1}HD ${goto 40}$color${fs_used_perc /}% ${goto 75}${color2}${fs_used /} / ${fs_size /} ${goto 200}$color${fs_bar 5 /}
+
+${goto 8}${color1}Name${goto 130}${color1}PID${goto 250}${color1}CPU${color2}%${goto 350}${color1}RAM${color2}%$color
+${lua_parse top}
+${offset 400}
+
+
+
+]]
+
+
+
+
+
+
