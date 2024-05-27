@@ -16,7 +16,8 @@ sudo apt install conky-all lua5.3 jq lm-sensors
 * Install repository:
 ```
 mkdir -p ~/.conky
-git clone https://github.com/smiady/conky-weather-clock-smiady.git ~/.conky/
+cd ~/.conky
+git clone https://github.com/smiady/conky-weather-clock-smiady.git
 ```
 
 ## Configuration
@@ -95,3 +96,5 @@ ${offset 400}
 
 ## Credits
 * Font weather icons is taken from [Open Weather Icons](https://github.com/isneezy/open-weather-icons).
+
+[Back to top](#conky-weather-clock-smiady)
