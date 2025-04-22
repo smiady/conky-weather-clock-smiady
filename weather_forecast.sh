@@ -72,7 +72,9 @@ function map_day() {
 		Thu) echo 'th' ;;
 		Fri) echo 'fr' ;;
 		Sat) echo 'sa' ;;
-		Sun) echo 'su'
+		Sun) echo 'su' ;;
+		
+		*) echo $1
 	esac	
 }
 
